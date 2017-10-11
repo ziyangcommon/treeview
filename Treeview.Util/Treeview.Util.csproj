@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CCBD777C-0C87-4CB0-ADB7-36F792654C81}</ProjectGuid>
+    <ProjectGuid>{0E06C377-B0A4-4550-B5BA-018FC43E08B7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Treeview.Data</RootNamespace>
-    <AssemblyName>Treeview.Data</AssemblyName>
+    <RootNamespace>Treeview.Util</RootNamespace>
+    <AssemblyName>Treeview.Util</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -36,9 +36,6 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -50,27 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TreeNodeRepository.cs" />
-    <Compile Include="TreeviewContext.cs" />
-    <Compile Include="DBHelper.cs" />
-    <Compile Include="Exceptions\EntityExistsException.cs" />
-    <Compile Include="Exceptions\NoSupportCompareTypeException.cs" />
-    <Compile Include="IRepository.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="ExtentionMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Treeview.Entity\Treeview.Entity.csproj">
-      <Project>{3977df72-5bb3-4558-87b9-956d3914afcb}</Project>
-      <Name>Treeview.Entity</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Treeview.Util\Treeview.Util.csproj">
-      <Project>{0e06c377-b0a4-4550-b5ba-018fc43e08b7}</Project>
-      <Name>Treeview.Util</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

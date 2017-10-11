@@ -44,8 +44,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -176,6 +179,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TreeviewController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -189,6 +193,156 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="public\.idea\misc.xml" />
+    <Content Include="public\.idea\modules.xml" />
+    <Content Include="public\.idea\workspace.xml" />
+    <Content Include="public\css\global.css" />
+    <Content Include="public\css\tree.css" />
+    <Content Include="public\index.html" />
+    <Content Include="public\js\index.js" />
+    <Content Include="public\js\nodeSelector.js" />
+    <Content Include="public\js\tree.js" />
+    <Content Include="public\node_modules\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="public\node_modules\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="public\node_modules\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="public\node_modules\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="public\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="public\node_modules\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="public\node_modules\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="public\node_modules\bootstrap\dist\js\npm.js" />
+    <Content Include="public\node_modules\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="public\node_modules\bootstrap\Gruntfile.js" />
+    <Content Include="public\node_modules\bootstrap\grunt\bs-commonjs-generator.js" />
+    <Content Include="public\node_modules\bootstrap\grunt\bs-glyphicons-data-generator.js" />
+    <Content Include="public\node_modules\bootstrap\grunt\bs-lessdoc-parser.js" />
+    <Content Include="public\node_modules\bootstrap\grunt\bs-raw-files-generator.js" />
+    <Content Include="public\node_modules\bootstrap\grunt\change-version.js" />
+    <Content Include="public\node_modules\bootstrap\js\affix.js" />
+    <Content Include="public\node_modules\bootstrap\js\alert.js" />
+    <Content Include="public\node_modules\bootstrap\js\button.js" />
+    <Content Include="public\node_modules\bootstrap\js\carousel.js" />
+    <Content Include="public\node_modules\bootstrap\js\collapse.js" />
+    <Content Include="public\node_modules\bootstrap\js\dropdown.js" />
+    <Content Include="public\node_modules\bootstrap\js\modal.js" />
+    <Content Include="public\node_modules\bootstrap\js\popover.js" />
+    <Content Include="public\node_modules\bootstrap\js\scrollspy.js" />
+    <Content Include="public\node_modules\bootstrap\js\tab.js" />
+    <Content Include="public\node_modules\bootstrap\js\tooltip.js" />
+    <Content Include="public\node_modules\bootstrap\js\transition.js" />
+    <Content Include="public\node_modules\jquery\AUTHORS.txt" />
+    <Content Include="public\node_modules\jquery\dist\core.js" />
+    <Content Include="public\node_modules\jquery\dist\jquery.js" />
+    <Content Include="public\node_modules\jquery\dist\jquery.min.js" />
+    <Content Include="public\node_modules\jquery\dist\jquery.slim.js" />
+    <Content Include="public\node_modules\jquery\dist\jquery.slim.min.js" />
+    <Content Include="public\node_modules\jquery\external\sizzle\dist\sizzle.js" />
+    <Content Include="public\node_modules\jquery\external\sizzle\dist\sizzle.min.js" />
+    <Content Include="public\node_modules\jquery\external\sizzle\LICENSE.txt" />
+    <Content Include="public\node_modules\jquery\LICENSE.txt" />
+    <Content Include="public\node_modules\jquery\src\ajax.js" />
+    <Content Include="public\node_modules\jquery\src\ajax\jsonp.js" />
+    <Content Include="public\node_modules\jquery\src\ajax\load.js" />
+    <Content Include="public\node_modules\jquery\src\ajax\parseXML.js" />
+    <Content Include="public\node_modules\jquery\src\ajax\script.js" />
+    <Content Include="public\node_modules\jquery\src\ajax\var\location.js" />
+    <Content Include="public\node_modules\jquery\src\ajax\var\nonce.js" />
+    <Content Include="public\node_modules\jquery\src\ajax\var\rquery.js" />
+    <Content Include="public\node_modules\jquery\src\ajax\xhr.js" />
+    <Content Include="public\node_modules\jquery\src\attributes.js" />
+    <Content Include="public\node_modules\jquery\src\attributes\attr.js" />
+    <Content Include="public\node_modules\jquery\src\attributes\classes.js" />
+    <Content Include="public\node_modules\jquery\src\attributes\prop.js" />
+    <Content Include="public\node_modules\jquery\src\attributes\support.js" />
+    <Content Include="public\node_modules\jquery\src\attributes\val.js" />
+    <Content Include="public\node_modules\jquery\src\callbacks.js" />
+    <Content Include="public\node_modules\jquery\src\core.js" />
+    <Content Include="public\node_modules\jquery\src\core\access.js" />
+    <Content Include="public\node_modules\jquery\src\core\DOMEval.js" />
+    <Content Include="public\node_modules\jquery\src\core\init.js" />
+    <Content Include="public\node_modules\jquery\src\core\nodeName.js" />
+    <Content Include="public\node_modules\jquery\src\core\parseHTML.js" />
+    <Content Include="public\node_modules\jquery\src\core\ready-no-deferred.js" />
+    <Content Include="public\node_modules\jquery\src\core\ready.js" />
+    <Content Include="public\node_modules\jquery\src\core\readyException.js" />
+    <Content Include="public\node_modules\jquery\src\core\stripAndCollapse.js" />
+    <Content Include="public\node_modules\jquery\src\core\support.js" />
+    <Content Include="public\node_modules\jquery\src\core\var\rsingleTag.js" />
+    <Content Include="public\node_modules\jquery\src\css.js" />
+    <Content Include="public\node_modules\jquery\src\css\addGetHookIf.js" />
+    <Content Include="public\node_modules\jquery\src\css\adjustCSS.js" />
+    <Content Include="public\node_modules\jquery\src\css\curCSS.js" />
+    <Content Include="public\node_modules\jquery\src\css\hiddenVisibleSelectors.js" />
+    <Content Include="public\node_modules\jquery\src\css\showHide.js" />
+    <Content Include="public\node_modules\jquery\src\css\support.js" />
+    <Content Include="public\node_modules\jquery\src\css\var\cssExpand.js" />
+    <Content Include="public\node_modules\jquery\src\css\var\getStyles.js" />
+    <Content Include="public\node_modules\jquery\src\css\var\isHiddenWithinTree.js" />
+    <Content Include="public\node_modules\jquery\src\css\var\rmargin.js" />
+    <Content Include="public\node_modules\jquery\src\css\var\rnumnonpx.js" />
+    <Content Include="public\node_modules\jquery\src\css\var\swap.js" />
+    <Content Include="public\node_modules\jquery\src\data.js" />
+    <Content Include="public\node_modules\jquery\src\data\Data.js" />
+    <Content Include="public\node_modules\jquery\src\data\var\acceptData.js" />
+    <Content Include="public\node_modules\jquery\src\data\var\dataPriv.js" />
+    <Content Include="public\node_modules\jquery\src\data\var\dataUser.js" />
+    <Content Include="public\node_modules\jquery\src\deferred.js" />
+    <Content Include="public\node_modules\jquery\src\deferred\exceptionHook.js" />
+    <Content Include="public\node_modules\jquery\src\deprecated.js" />
+    <Content Include="public\node_modules\jquery\src\dimensions.js" />
+    <Content Include="public\node_modules\jquery\src\effects.js" />
+    <Content Include="public\node_modules\jquery\src\effects\animatedSelector.js" />
+    <Content Include="public\node_modules\jquery\src\effects\Tween.js" />
+    <Content Include="public\node_modules\jquery\src\event.js" />
+    <Content Include="public\node_modules\jquery\src\event\ajax.js" />
+    <Content Include="public\node_modules\jquery\src\event\alias.js" />
+    <Content Include="public\node_modules\jquery\src\event\focusin.js" />
+    <Content Include="public\node_modules\jquery\src\event\support.js" />
+    <Content Include="public\node_modules\jquery\src\event\trigger.js" />
+    <Content Include="public\node_modules\jquery\src\exports\amd.js" />
+    <Content Include="public\node_modules\jquery\src\exports\global.js" />
+    <Content Include="public\node_modules\jquery\src\jquery.js" />
+    <Content Include="public\node_modules\jquery\src\manipulation.js" />
+    <Content Include="public\node_modules\jquery\src\manipulation\buildFragment.js" />
+    <Content Include="public\node_modules\jquery\src\manipulation\getAll.js" />
+    <Content Include="public\node_modules\jquery\src\manipulation\setGlobalEval.js" />
+    <Content Include="public\node_modules\jquery\src\manipulation\support.js" />
+    <Content Include="public\node_modules\jquery\src\manipulation\var\rcheckableType.js" />
+    <Content Include="public\node_modules\jquery\src\manipulation\var\rscriptType.js" />
+    <Content Include="public\node_modules\jquery\src\manipulation\var\rtagName.js" />
+    <Content Include="public\node_modules\jquery\src\manipulation\wrapMap.js" />
+    <Content Include="public\node_modules\jquery\src\manipulation\_evalUrl.js" />
+    <Content Include="public\node_modules\jquery\src\offset.js" />
+    <Content Include="public\node_modules\jquery\src\queue.js" />
+    <Content Include="public\node_modules\jquery\src\queue\delay.js" />
+    <Content Include="public\node_modules\jquery\src\selector-native.js" />
+    <Content Include="public\node_modules\jquery\src\selector-sizzle.js" />
+    <Content Include="public\node_modules\jquery\src\selector.js" />
+    <Content Include="public\node_modules\jquery\src\serialize.js" />
+    <Content Include="public\node_modules\jquery\src\traversing.js" />
+    <Content Include="public\node_modules\jquery\src\traversing\findFilter.js" />
+    <Content Include="public\node_modules\jquery\src\traversing\var\dir.js" />
+    <Content Include="public\node_modules\jquery\src\traversing\var\rneedsContext.js" />
+    <Content Include="public\node_modules\jquery\src\traversing\var\siblings.js" />
+    <Content Include="public\node_modules\jquery\src\var\arr.js" />
+    <Content Include="public\node_modules\jquery\src\var\class2type.js" />
+    <Content Include="public\node_modules\jquery\src\var\concat.js" />
+    <Content Include="public\node_modules\jquery\src\var\document.js" />
+    <Content Include="public\node_modules\jquery\src\var\documentElement.js" />
+    <Content Include="public\node_modules\jquery\src\var\fnToString.js" />
+    <Content Include="public\node_modules\jquery\src\var\getProto.js" />
+    <Content Include="public\node_modules\jquery\src\var\hasOwn.js" />
+    <Content Include="public\node_modules\jquery\src\var\indexOf.js" />
+    <Content Include="public\node_modules\jquery\src\var\ObjectFunctionString.js" />
+    <Content Include="public\node_modules\jquery\src\var\pnum.js" />
+    <Content Include="public\node_modules\jquery\src\var\push.js" />
+    <Content Include="public\node_modules\jquery\src\var\rcssNum.js" />
+    <Content Include="public\node_modules\jquery\src\var\rnothtmlwhite.js" />
+    <Content Include="public\node_modules\jquery\src\var\slice.js" />
+    <Content Include="public\node_modules\jquery\src\var\support.js" />
+    <Content Include="public\node_modules\jquery\src\var\toString.js" />
+    <Content Include="public\node_modules\jquery\src\wrap.js" />
+    <Content Include="public\node_modules\json3\lib\json3.js" />
+    <Content Include="public\node_modules\json3\lib\json3.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -213,6 +367,109 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="public\.idea\public.iml" />
+    <Content Include="public\node_modules\bootstrap\CHANGELOG.md" />
+    <Content Include="public\node_modules\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="public\node_modules\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="public\node_modules\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="public\node_modules\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="public\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="public\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="public\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="public\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="public\node_modules\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="public\node_modules\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="public\node_modules\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="public\node_modules\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="public\node_modules\bootstrap\grunt\.jshintrc" />
+    <Content Include="public\node_modules\bootstrap\grunt\configBridge.json" />
+    <Content Include="public\node_modules\bootstrap\grunt\npm-shrinkwrap.json" />
+    <Content Include="public\node_modules\bootstrap\grunt\sauce_browsers.yml" />
+    <Content Include="public\node_modules\bootstrap\less\alerts.less" />
+    <Content Include="public\node_modules\bootstrap\less\badges.less" />
+    <Content Include="public\node_modules\bootstrap\less\bootstrap.less" />
+    <Content Include="public\node_modules\bootstrap\less\breadcrumbs.less" />
+    <Content Include="public\node_modules\bootstrap\less\button-groups.less" />
+    <Content Include="public\node_modules\bootstrap\less\buttons.less" />
+    <Content Include="public\node_modules\bootstrap\less\carousel.less" />
+    <Content Include="public\node_modules\bootstrap\less\close.less" />
+    <Content Include="public\node_modules\bootstrap\less\code.less" />
+    <Content Include="public\node_modules\bootstrap\less\component-animations.less" />
+    <Content Include="public\node_modules\bootstrap\less\dropdowns.less" />
+    <Content Include="public\node_modules\bootstrap\less\forms.less" />
+    <Content Include="public\node_modules\bootstrap\less\glyphicons.less" />
+    <Content Include="public\node_modules\bootstrap\less\grid.less" />
+    <Content Include="public\node_modules\bootstrap\less\input-groups.less" />
+    <Content Include="public\node_modules\bootstrap\less\jumbotron.less" />
+    <Content Include="public\node_modules\bootstrap\less\labels.less" />
+    <Content Include="public\node_modules\bootstrap\less\list-group.less" />
+    <Content Include="public\node_modules\bootstrap\less\media.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\alerts.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\background-variant.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\border-radius.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\buttons.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\center-block.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\clearfix.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\forms.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\gradients.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\grid-framework.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\grid.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\hide-text.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\image.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\labels.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\list-group.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\nav-divider.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\nav-vertical-align.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\opacity.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\pagination.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\panels.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\progress-bar.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\reset-filter.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\reset-text.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\resize.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\responsive-visibility.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\size.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\tab-focus.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\table-row.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\text-emphasis.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\text-overflow.less" />
+    <Content Include="public\node_modules\bootstrap\less\mixins\vendor-prefixes.less" />
+    <Content Include="public\node_modules\bootstrap\less\modals.less" />
+    <Content Include="public\node_modules\bootstrap\less\navbar.less" />
+    <Content Include="public\node_modules\bootstrap\less\navs.less" />
+    <Content Include="public\node_modules\bootstrap\less\normalize.less" />
+    <Content Include="public\node_modules\bootstrap\less\pager.less" />
+    <Content Include="public\node_modules\bootstrap\less\pagination.less" />
+    <Content Include="public\node_modules\bootstrap\less\panels.less" />
+    <Content Include="public\node_modules\bootstrap\less\popovers.less" />
+    <Content Include="public\node_modules\bootstrap\less\print.less" />
+    <Content Include="public\node_modules\bootstrap\less\progress-bars.less" />
+    <Content Include="public\node_modules\bootstrap\less\responsive-embed.less" />
+    <Content Include="public\node_modules\bootstrap\less\responsive-utilities.less" />
+    <Content Include="public\node_modules\bootstrap\less\scaffolding.less" />
+    <Content Include="public\node_modules\bootstrap\less\tables.less" />
+    <Content Include="public\node_modules\bootstrap\less\theme.less" />
+    <Content Include="public\node_modules\bootstrap\less\thumbnails.less" />
+    <Content Include="public\node_modules\bootstrap\less\tooltip.less" />
+    <Content Include="public\node_modules\bootstrap\less\type.less" />
+    <Content Include="public\node_modules\bootstrap\less\utilities.less" />
+    <Content Include="public\node_modules\bootstrap\less\variables.less" />
+    <Content Include="public\node_modules\bootstrap\less\wells.less" />
+    <Content Include="public\node_modules\bootstrap\LICENSE" />
+    <Content Include="public\node_modules\bootstrap\package.json" />
+    <Content Include="public\node_modules\bootstrap\README.md" />
+    <Content Include="public\node_modules\jquery\bower.json" />
+    <Content Include="public\node_modules\jquery\dist\jquery.min.map" />
+    <Content Include="public\node_modules\jquery\dist\jquery.slim.min.map" />
+    <Content Include="public\node_modules\jquery\external\sizzle\dist\sizzle.min.map" />
+    <Content Include="public\node_modules\jquery\package.json" />
+    <Content Include="public\node_modules\jquery\README.md" />
+    <Content Include="public\node_modules\jquery\src\.eslintrc.json" />
+    <Content Include="public\node_modules\json3\LICENSE" />
+    <Content Include="public\node_modules\json3\package.json" />
+    <Content Include="public\node_modules\json3\README.md" />
+    <Content Include="public\package-lock.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -237,6 +494,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="public\.idea\inspectionProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -250,6 +508,16 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Treeview.Data\Treeview.Data.csproj">
+      <Project>{ccbd777c-0c87-4cb0-adb7-36f792654c81}</Project>
+      <Name>Treeview.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Treeview.Entity\Treeview.Entity.csproj">
+      <Project>{3977df72-5bb3-4558-87b9-956d3914afcb}</Project>
+      <Name>Treeview.Entity</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
